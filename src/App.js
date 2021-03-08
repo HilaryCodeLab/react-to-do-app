@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ToDoList from './components/ToDoList';
+import NoteList from './components/NoteList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let items = [
+    {
+      id: 1,
+      text:"Learn Javascript",
+      completed: false
+    },
+    { id: 2,
+      text:"Learn ReactJs",
+      completed: false
+    },
+    { id: 3,
+      text:"Build React App",
+      completed: false
+    }
+  ];
+  let title = "Things to do";
+
+  let noteItems = [
+    {
+        id: 1,
+        text:'Note item 1',
+        completed: false
+    },
+    {
+        id: 2,
+        text:'Note item 2',
+        completed: false
+    },
+    {
+        id: 3,
+        text:'Note item 3',
+        completed: false
+    }
+  ];
+
+  let noteTitle = "Note List";
+
+    return (
+     <div className="container">
+       <div className="row">
+          {/* <ToDoList title={title} items={items}/> */}
+          <NoteList noteTitle={noteTitle} noteItems={noteItems}/>
+       </div>
+     </div>
+    );
+  
 }
 
 export default App;
