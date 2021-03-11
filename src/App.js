@@ -43,8 +43,8 @@ function App() {
     return (
      <div className="container">
        <div className="row">
-          {/* <ToDoList title={title} items={items}/> */}
-          <NoteList noteTitle={noteTitle} noteItems={noteItems}/>
+          <ToDoList title={title} items={items}/>
+          {/* <NoteList noteTitle={noteTitle} noteItems={noteItems}/> */}
        </div>
      </div>
     );
