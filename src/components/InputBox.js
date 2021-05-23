@@ -14,11 +14,21 @@ import * as KeyCode from 'keycode-js';
         
     }
 
-    handleKeyUp(e){
-        if(e.keyCode === KeyCode.KEY_RETURN){
+    clear(){
+        this.setState({
+            value: ""
+        });
+    }
 
+    handleKeyUp(e){
+        const {addNew} = this.props;
+        const text = this.state.value.trim(); 
+        if(e.keyCode === KeyCode.KEY_RETURN && text){
+            addNew(text);
+            this.clear();
         }
     }
+
     render(){
         return(
             <input type="text" className="form-control add-todo" 
